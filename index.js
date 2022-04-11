@@ -1,16 +1,11 @@
 const puppeteer = require("puppeteer");
 
 async function handlePassCaptchaAndGetCookie() {
-  let count = 0;
   try {
     let cookie = await runPassCaptchaAndGetCookie();
     console.log("cookie :", cookie);
   } catch (error) {
     console.log("error: ", error);
-    count++;
-    if (count < 2) {
-      handlePassCaptchaAndGetCookie();
-    }
   }
 }
 handlePassCaptchaAndGetCookie();
